@@ -1,14 +1,3 @@
-#' @export
-LEVEL <- list(
-  'trace',
-  'info',
-  'error',
-  'fatal',
-  'warn',
-  'debug'
-)
-names(LEVEL) <- toupper(LEVEL)
-
 # https://stackoverflow.com/questions/7307987/logging-current-function-name#answer-7321668
 curfnfinder<-function(skipframes=0, skipnames="(FUN)|(.+apply)|(replicate)",
                       retIfNone="Not in function", retStack=FALSE, extraPrefPerLevel="\t") {
@@ -36,7 +25,7 @@ curfnfinder<-function(skipframes=0, skipnames="(FUN)|(.+apply)|(replicate)",
 #' @export
 #'
 #' @examples
-#' LOG <- makeLogger(default_level=LEVEL$TRACE)
+#' LOG <- makeLogger(funlog::LEVEL$TRACE)
 #' LOG("2+2={2+2}")
 makeLogger <- function(default_level='trace') {
   LOG <<- function(msg, level=default_level, .envir=parent.frame()) {
@@ -63,12 +52,11 @@ makeLogger <- function(default_level='trace') {
 #'
 #' @param level Can be anything in `LEVEL`
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
-#' LOG <- makeLogger(default_level=LEVEL$TRACE)
-#' setLogLevel(LEVEL$TRACE)
+#' setLogLevel(funlog::LEVEL$TRACE)
 setLogLevel <- function(level) {
   Sys.setenv(LOG_LEVEL=toupper(level))
 }

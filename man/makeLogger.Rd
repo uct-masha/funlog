@@ -17,6 +17,6 @@ The message can use the glue libraries {} syntax.
 Create a logging function
 }
 \examples{
-LOG <- makeLogger(default_level=LEVEL$TRACE)
+LOG <- makeLogger(funlog::LEVEL$TRACE)
 LOG("2+2={2+2}")
 }
