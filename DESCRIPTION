@@ -1,0 +1,24 @@
+Package: funlog
+Type: Package
+Title: Opinionated Logging Library
+Version: 0.1.0
+Author: Jared Norman
+Maintainer: Jared Norman <jared.norman@uct.ac.za>
+Description: Uses the rlog library for logging but does a best-effort attempt
+    to include information about the location and name of the parent function.
+    I have found this useful in cases where R gives an error without sufficient
+    context and you want to reason about where the error may have occured. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends:
+    R (>= 3.2)
+Imports:
+    fs,
+    glue, 
+    crayon, 
+    rlog, 
+    stringr, 
+    this.path
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
