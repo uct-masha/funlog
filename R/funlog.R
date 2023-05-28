@@ -1,4 +1,5 @@
-LEVEL <<- list(
+#' @export
+LEVEL <- list(
   'trace',
   'info',
   'error',
