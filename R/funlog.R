@@ -58,6 +58,16 @@ makeLogger <- function(default_level='trace') {
   LOG
 }
 
+#' Set the log level
+#'
+#' @param level Can be anything in `LEVEL`
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' LOG <- makeLogger(default_level=LEVEL$TRACE)
+#' setLogLevel(LEVEL$TRACE)
 setLogLevel <- function(level) {
   Sys.setenv(LOG_LEVEL=toupper(level))
 }
